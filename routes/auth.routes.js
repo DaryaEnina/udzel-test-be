@@ -23,7 +23,8 @@ router.post(
         });
       }
 
-      const { email, password, name } = req.body;
+      const { email, password, name, agreement, passwordConfirmation } =
+        req.body;
 
       const candidate = await User.findOne({ email });
       if (candidate) {
@@ -38,6 +39,8 @@ router.post(
         email,
         password: hashedPassword,
         name,
+        agreement,
+        passwordConfirmation,
       });
 
       await user.save();
