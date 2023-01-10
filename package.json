@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "server": "nodemon app.js"
+    "server": "nodemon app.js",
+    "build": "npm run build",
   },
   "author": "Darya Enina",
   "license": "ISC",
