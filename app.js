@@ -13,7 +13,7 @@ const app = express();
 // ];
 
 const corsOptions = {
-  origin: "https://daryaenina.github.io",
+  origin: "*",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   mode: "no-cors",
 };
