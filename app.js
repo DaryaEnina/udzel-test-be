@@ -7,14 +7,13 @@ const PORT = process.env.port || 5000;
 const app = express();
 
 // const whitelist = [
-//   "https://backend-production-bc92.up.railway.app",
-//   "https://mern-app-development.up.railway.app",
 //   "http://localhost:5000",
 //   "http://localhost:3000",
+// "https://udzel-test-be-production.up.railway.app/"
 // ];
 
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://daryaenina.github.io/udzel-test/",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   mode: "no-cors",
 };
