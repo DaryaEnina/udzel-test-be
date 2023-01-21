@@ -113,4 +113,31 @@ router.post(
   }
 );
 
+// router.get("/user/:email", async (req, res) => {
+//   const { email } = req.params;
+//   try {
+//     User.findOne({ email }, function (err, user) {
+//       res.status(201).send(user);
+//     });
+//   } catch (e) {
+//     console.log(e);
+//     res
+//       .status(500)
+//       .json({ message: "Что-то пошло не так, попробуйте снова..." });
+//   }
+// });
+
+router.get("/user/:email", async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    res.json(user);
+    console.log(user);
+  } catch (e) {
+    console.log(e);
+    res
+      .status(500)
+      .json({ message: "Что-то пошло не так, попробуйте снова..." });
+  }
+});
 module.exports = router;

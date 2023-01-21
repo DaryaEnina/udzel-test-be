@@ -1,13 +1,16 @@
 const { Router } = require("express");
-const Users = require("../models/users");
+const User = require("../models/user");
 const config = require("config");
 
 const router = Router();
 
-router.get("/", async (req, res) => {
+router.get("/user/:email", async (req, res) => {
+  const { email } = req.params;
   try {
-    const users = await Users.find();
-    res.json(users);
+    const user = User.findOne({ email });
+
+    res.json(user);
+    console.log(user);
   } catch (e) {
     console.log(e);
     res
@@ -19,7 +22,6 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     const { email } = req.body;
-    console.log(req.body);
     const userByEmail = await Users.find({ email: req.body.email });
     const users = new Users();
 
