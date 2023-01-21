@@ -15,7 +15,6 @@ router.get("/", async (req, res) => {
       .json({ message: "Что-то пошло не так, попробуйте снова..." });
   }
 });
-module.exports = router;
 
 router.post("/", async (req, res) => {
   try {
@@ -92,3 +91,5 @@ router.put("/status/unblock/:id", async (req, res) => {
     res.status(500).json({ message: "Что-то пошло не так, попробуйте снова" });
   }
 });
+
+module.exports = router;
