@@ -13,7 +13,7 @@ const app = express();
 // ];
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://daryaenina.github.io/udzel-test"],
+  origin: ["http://localhost:3000", "https://daryaenina.github.io"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   mode: "no-cors",
 };

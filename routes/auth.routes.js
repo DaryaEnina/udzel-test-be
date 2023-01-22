@@ -129,7 +129,7 @@ router.post(
 
 router.get("/user/:email", async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email } = req.params;
     const user = await User.findOne({ email });
     res.json(user);
     console.log(user);
@@ -140,4 +140,5 @@ router.get("/user/:email", async (req, res) => {
       .json({ message: "Что-то пошло не так, попробуйте снова..." });
   }
 });
+
 module.exports = router;
