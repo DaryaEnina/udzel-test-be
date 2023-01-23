@@ -127,12 +127,36 @@ router.post(
 //   }
 // });
 
-router.get("/user/:email", async (req, res) => {
+router.get("/user/:id", async (req, res) => {
   try {
-    const { email } = req.params;
-    const user = await User.findOne({ email });
+    const { id } = req.params;
+    if (!id) {
+      console.log("not id");
+    }
+    const user = await User.findOne({ _id: id });
     res.json(user);
     console.log(user);
+  } catch (e) {
+    console.log(e);
+    res
+      .status(500)
+      .json({ message: "Что-то пошло не так, попробуйте снова..." });
+  }
+});
+
+router.post("/user/edit/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findOneAndUpdate(
+      { _id: id },
+      {
+        name: req.body.name,
+        email: req.body.email,
+        date: req.body.date,
+      }
+    );
+
+    res.status(201).json({ message: "Данные пользователя изменены" });
   } catch (e) {
     console.log(e);
     res

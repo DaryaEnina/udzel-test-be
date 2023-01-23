@@ -6,6 +6,8 @@ const schema = new Schema({
   name: { type: String },
   agreement: { type: Boolean, required: true, default: false },
   passwordConfirmation: { type: String, required: true },
+  date: { type: String },
+  phone: { type: String },
 });
 
 module.exports = model("User", schema);
