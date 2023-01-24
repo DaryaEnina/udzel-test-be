@@ -135,7 +135,6 @@ router.get("/user/:id", async (req, res) => {
     }
     const user = await User.findOne({ _id: id });
     res.json(user);
-    console.log(user);
   } catch (e) {
     console.log(e);
     res
