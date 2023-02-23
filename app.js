@@ -13,7 +13,11 @@ const app = express();
 // ];
 
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://daryaenina.github.io"],
+  origin: [
+    "http://localhost:3000",
+    "https://daryaenina.github.io",
+    "http://udzel.hopto.org",
+  ],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   mode: "no-cors",
 };
